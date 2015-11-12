@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Adicionar obra</title>
+        <meta charset="UTF-8"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="adicionarObra.js"></script>
+    </head>
+    <body>
+        <h3>Adicionar obra</h3>
+        <form id="myform" action="adicionarObra.php" method="post" enctype="multipart/form-data">
+            <fieldset id="metadata">                
+                <legend>Metainformação</legend>
+                <table id="metaTabela">
+                    <tr>
+                        <td>Título: </td>
+                        <td><input type="text" size="30" id="titulo" name="titulo"/></td>
+                    </tr>
+                    <tr>
+                        <td>Categoria: </td>
+                        <td><select id="categoria" name="categoria"></select></td>
+                    </tr>
+                </table>
+                              
+                <div id="includes" style="margin:5pt;">
+                    <button id="ad-subtitulo">Adicionar Subtítulo</button>
+                    <button id="ad-desc">Adicionar Descrição</button>
+                    <button id="ad-compositor">Adicionar Compositor</button>
+                    <button id="ad-arranjo">Adicionar Arranjo</button>
+                </div>
+            </fieldset>
+            <fieldset id="instrumentos">
+                <legend>Instrumentos</legend>
+                <div style="margin:7px; margin-bottom:15px;">
+                    <input type="button" id="adInstrumento" value="+1 Instrumento"/>
+                    <input type="button" id="remInstrumento" value="-1 Instrumento"/>
+                </div>
+                <hr/>
+                <div id="listaInstrumentos">
+                    <div id="i1" style="margin-bottom:10px;">
+                        <label for="instrumento1">Instrumento: </label>
+                        <select id="instrumento1" name="instrumento[1]"></select>
+                        <label for="clave1"> Clave: </label>
+                        <select id="clave1" name="clave[1]">
+                            <option>nd</option>
+                            <option>Sol</option>
+                            <option>Fá</option>
+                            <option>Dó</option>
+                        </select>
+                        <label for="voz1"> Voz: </label>
+                        <select id="voz1" name="voz[1]"></select>
+                        <label for="afinacao1"> Afinação: </label>
+                        <select id="afinacao1" name="afinacao[1]">
+                            <option>nd</option>
+                            <option>Dó</option>
+                            <option>Sib</option>
+                            <option>Mib</option>
+                            <option>Fá</option>
+                        </select>
+                        <br/>
+                        <label for="partitura1">Ficheiro da partitura: </label>
+                        <input type="file" name="partitura[1]" id="partitura1"/>
+                        <br/>
+                    </div>
+                </div>
+            </fieldset>
+            <input type="button" id="enviar" value="Enviar"/>
+        </form>
+    </body>
+</html>
